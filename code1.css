@@ -1,0 +1,225 @@
+/* CSS Custom Properties (Variables) */
+:root {
+    --primary-color: #004080;
+    --secondary-color: #0056b3;
+    --accent-color: #ffc107;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --error-color: #d9534f;
+    --success-color: #5cb85c;
+    --radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.3rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Main Layout */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+/* Search and Filter Controls */
+.search-filter-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.search-filter-container input,
+.search-filter-container select {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+/* Book Grid & Cards (Responsive Flexbox/Grid) */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 cards per row */
+    gap: 1.5rem;
+}
+
+.book-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.book-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.book-card p {
+    margin-bottom: 0.4rem;
+    color: #555;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+button, .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+button:hover, .btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Add Book Form Section */
+.form-section {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+.error-message {
+    color: var(--error-color);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Footer Style */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #343a40;
+    color: white;
+    margin-top: 3rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet: 2 cards per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .book-grid {
+        grid-template-columns: 1fr; /* Mobile: 1 card per row */
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

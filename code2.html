@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueLib Catalogue | BlueCrest College Library</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-container">
+            <h1>BlueLib Catalogue</h1>
+            <p>BlueCrest College Library Online System</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#catalog">Browse Catalogue</a></li>
+                <li><a href="#add-book-section">Add New Book</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Search and Filter Section -->
+        <section class="controls-section">
+            <div class="search-filter-container">
+                <input type="text" id="searchInput" placeholder="Search books by title...">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="IT">IT</option>
+                    <option value="Business">Business</option>
+                    <option value="Science">Science</option>
+                    <option value="Arts">Arts</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Book Display Catalogue Section -->
+        <section id="catalog" class="catalog-section">
+            <h2>Available Books</h2>
+            <div id="bookContainer" class="book-grid">
+                <!-- Dynamically populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Add Book Section -->
+        <section id="add-book-section" class="form-section">
+            <h2>Add a New Book to Catalogue</h2>
+            <form id="addBookForm">
+                <div class="form-group">
+                    <label for="title">Book Title:</label>
+                    <input type="text" id="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="IT">IT</option>
+                        <option value="Business">Business</option>
+                        <option value="Science">Science</option>
+                        <option value="Arts">Arts</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="copies">Copies Available:</label>
+                    <input type="number" id="copies" min="0" required>
+                </div>
+
+                <div id="formMessage" class="error-message"></div>
+
+                <button type="submit" class="btn-primary">Add Book</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 BlueCrest College Library. Developed by Benjamin Gyasi (Student ID: 400622039200).</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="js/app.js"></script>
+</body>
+</html>
